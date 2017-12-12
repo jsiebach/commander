@@ -1,10 +1,13 @@
-# Laravel Backpack Commander
+# Backpack for Laravel Commander
 
-Backpack Commander is a simple CRUD interface for running Artisan commands in Laravel Backpack.  The main benefit is to quickly allow non-developers to run Artisan commands without needing command line access, and to easily configure the arguments and options for the command line using Backpack field definitions.
+Backpack Commander is a simple CRUD interface for running Artisan commands in Backpack for Laravel.  The main benefit is to quickly allow non-developers to run Artisan commands without needing command line access, and to easily configure the arguments and options for the command line using Backpack field definitions.
+
+![Commands CRUD](https://d3vv6lp55qjaqc.cloudfront.net/items/1p1U040q0k0U22231Q1y/Screen%20Shot%202017-12-12%20at%2009.25.06.png?X-CloudApp-Visitor-Id=b06a6c18c48a1f7aa999edbb6ea7a33a&v=0bf19282)
+![Running a command using Backpack for Laravel Commander](https://d3vv6lp55qjaqc.cloudfront.net/items/3c023z2C3C2w0h3n3A1J/Screen%20Shot%202017-12-12%20at%2009.25.20.png?X-CloudApp-Visitor-Id=b06a6c18c48a1f7aa999edbb6ea7a33a&v=ada01556)
 
 ## Installation
 
-* Install [Laravel Backpack](https://laravel-backpack.readme.io/docs)
+* Install [Backpack for Laravel](https://laravel-backpack.readme.io/docs)
 
 * Install Backpack Commander
 
@@ -12,11 +15,11 @@ Backpack Commander is a simple CRUD interface for running Artisan commands in La
 
 * Publish the config file
 
-`php artisan vendor:publish --provider="JSiebach\Commander\CommanderServiceProvider --tag="config"`
+`php artisan vendor:publish --provider="JSiebach\Commander\CommanderServiceProvider" --tag="config"`
 
 * Publish the migration
 
-`php artisan vendor:publish --provider="JSiebach\Commander\CommanderServiceProvider --tag="migrations"`
+`php artisan vendor:publish --provider="JSiebach\Commander\CommanderServiceProvider" --tag="migrations"`
 
 * Review the config file to update configuration for your app. Available options are:
 
@@ -148,4 +151,4 @@ MIT
 
 ## Credits
 
-[Laravel Backpack](https://laravel-backpack.readme.io/docs)
+[Backpack for Laravel](https://laravel-backpack.readme.io/docs)
