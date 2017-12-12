@@ -1,6 +1,18 @@
 {
   "name": "jsiebach/commander",
   "description": "A Laravel Backpack-driven interface for executing artisan commands",
+  "version": "0.0.2",
+  "keywords":["laravel", "laravel backpack", "artisan"],
+  "homepage": "https://github.com/jsiebach/commander",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeff Siebach",
+      "email": "jeff@jeffsiebach.com",
+      "homepage": "https://jeffsiebach.com",
+      "role": "Developer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "JSiebach\\Commander\\": "src"
