@@ -14,20 +14,14 @@ class CommanderServiceProvider extends ServiceProvider {
 	 */
 	public function boot(Router $router)
 	{
-		$configPath = __DIR__ . '/../config/commander.php';
-		$this->mergeConfigFrom($configPath, 'commander');
-		$this->publishes([$configPath => config_path('commander.php')], 'config');
 
-		$viewPath = __DIR__ . '/../resources/views';
-		$this->loadViewsFrom($viewPath, 'commander');
-		$this->publishes([
-			$viewPath => base_path('resources/views/vendor/commander'),
-		], 'views');
+		$this->publishes([ __DIR__ . '/config' => config_path()], 'config');
+		$this->publishes([ __DIR__ . '/database/migrations' => base_path('database/migrations')], 'migrations');
+		$this->publishes([ __DIR__ . '/resources/views' => resource_path('views/vendor/commander')], 'views');
 
-		$migrationPath = __DIR__ . '/../database/migrations';
-		$this->publishes([
-			$migrationPath => base_path('database/migrations'),
-		], 'migrations');
+		$this->loadViewsFrom(resource_path('views/vendor/commander'), 'commander');
+		$this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'commander');
+
 
 		$config = $this->app['config']->get('commander.route', []);
 		$config['namespace'] = 'JSiebach\Commander';
