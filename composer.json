@@ -1,0 +1,21 @@
+{
+  "name": "jsiebach/commander",
+  "description": "A Laravel Backpack-driven interface for executing artisan commands",
+  "autoload": {
+    "psr-4": {
+      "JSiebach\\Commander\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=7.0.0",
+    "backpack/base": "^0.8.3",
+    "backpack/crud": "^3.3"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JSiebach\\Commander\\CommanderServiceProvider"
+      ]
+    }
+  }
+}
