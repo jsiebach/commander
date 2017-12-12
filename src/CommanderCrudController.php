@@ -72,7 +72,7 @@ class CommanderCrudController extends CrudController
 
 		// ------ CRUD BUTTONS
 		// possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
-		if(!config('commander.allow_creation_and_deletion', false) == true){
+		if(!config('backpack.commander.allow_creation_and_deletion', false) == true){
 			$this->crud->removeAllButtons();
 		}
 		$this->crud->addButton('line', 'run', 'view', 'commander::run-button', 'end'); // add a button; possible types are: view, model_function

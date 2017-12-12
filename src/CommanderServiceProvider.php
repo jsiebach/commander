@@ -23,7 +23,7 @@ class CommanderServiceProvider extends ServiceProvider {
 		$this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'commander');
 
 
-		$config = $this->app['config']->get('commander.route', []);
+		$config = $this->app['config']->get('backpack.commander.route', []);
 		$config['namespace'] = 'JSiebach\Commander';
 
 		$router->group($config, function($router)
