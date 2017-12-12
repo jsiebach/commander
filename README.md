@@ -1,6 +1,6 @@
 # Laravel Backpack Commander
 
-Backpack Commander is a simple CRUD interface for running Artisan commands in Laravel Backpack.
+Backpack Commander is a simple CRUD interface for running Artisan commands in Laravel Backpack.  The main benefit is to quickly allow non-developers to run Artisan commands without needing command line access, and to easily configure the arguments and options for the command line using Backpack field definitions.
 
 ## Installation
 
