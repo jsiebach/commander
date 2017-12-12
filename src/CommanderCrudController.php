@@ -58,6 +58,11 @@ class CommanderCrudController extends CrudController
 				'name' => 'command',
 				'label' => 'Command',
 				'type' => 'text'
+			],
+			[
+				'name' => 'descriptive_name',
+				'label' => 'Descriptive Name (Optional)',
+				'type' => 'text'
 			]
 		]);
 		// $this->crud->removeColumn('column_name'); // remove a column from the stack
