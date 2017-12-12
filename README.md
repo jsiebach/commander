@@ -92,7 +92,7 @@ class RunNewUsersReport extends Command implements CommandableInterface
     {
         // You can use the arguments of the artisan command as normal:
     	$this->comment('The email address to send the report to is '.$this->option('email'));
-	    $this->comment('The option \'include-admins\' is '.(((boolean) $this->option('include-admins')) ? "true" : "false"));
+        $this->comment('The option \'include-admins\' is '.(((boolean) $this->option('include-admins')) ? "true" : "false"));
     	$this->comment('The start date for the report is '.$this->option('start-date'));
     }
 
