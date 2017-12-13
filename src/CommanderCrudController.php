@@ -19,7 +19,7 @@ class CommanderCrudController extends CrudController
 		|--------------------------------------------------------------------------
 		*/
 		$this->crud->setModel(CommanderCommand::class);
-		$this->crud->setRoute(config('commander.route.prefix').'/command');
+		$this->crud->setRoute(config('backpack.commander.route.prefix').'/command');
 		$this->crud->setEntityNameStrings('command', 'commands');
 
 		/*
