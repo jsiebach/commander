@@ -20,8 +20,8 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "backpack/base": "^0.8|^0.7",
-    "backpack/crud": "^3.3|^3.2"
+    "backpack/base": "0.8.*|0.7.*",
+    "backpack/crud": "3.3|3.2"
   },
   "extra": {
     "laravel": {
