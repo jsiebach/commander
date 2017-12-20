@@ -135,9 +135,14 @@ In the commands CRUD interface, click the `Run` button to run a command.  You wi
 
 Fill out the fields and click `Run`.  The output of the command will be printed in the resulting view.
 
+## Queueing a command
+
+If you want to run a command on the queue, add the field `--queue_command`.  If you want this to be an option, you can use a check box.  If you want it to be automatic, use a hidden field with value 1.
+
+You can specify the name of the queue with the `--queue_name` option.  Defaults to `default`
+
 ## Future development plans
 
-* Add support for queueing commands
 * Handle command errors
 * Consider ways to generate the index view without having a table (ie. define `$commandable = true` on commands that should be included)
 

@@ -168,8 +168,14 @@ class CommanderCrudController extends CrudController
 			$request = \Request::instance();
 		}
 		$command = CommanderCommand::findOrFail($id);
-		$exitCode = Artisan::call($command->command_object->getName(),
-			$request->except('_token'));
+		if($request->get('--queue_command')){
+			Artisan::queue($command->command_object->getName(),
+				$request->except('_token', '--queue_command', '--queue_name'))->onQueue($request->get('--queue_name', 'default'));
+			$exitCode = 2;
+		} else {
+			$exitCode = Artisan::call($command->command_object->getName(),
+				$request->except('_token', '--queue_command', '--queue_name'));
+		}
 
 		$this->data['id'] = $id;
 		$this->data['entry'] = $this->crud->getEntry($id);
@@ -180,6 +186,8 @@ class CommanderCrudController extends CrudController
 
 		if(0 === $exitCode){
 			\Alert::success('Command executed successfully.');
+		} else if (2 === $exitCode){
+			\Alert::success('Command queued.');
 		} else {
 			\Alert::warning('Command failed to execute.');
 		}
