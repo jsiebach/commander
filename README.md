@@ -11,7 +11,7 @@ Backpack Commander is a simple CRUD interface for running Artisan commands in Ba
 
 * Install Backpack Commander
 
-`composer require jsiebach/commander @dev`
+`composer require jsiebach/commander`
 
 * Publish the config file
 
