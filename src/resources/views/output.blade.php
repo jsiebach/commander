@@ -22,7 +22,6 @@
 
             @include('crud::inc.grouped_errors')
 
-            {!! Form::open(array('url' => $crud->route."/$id/run", 'method' => 'post')) !!}
             <div class="box">
 
                 <div class="box-header with-border">
@@ -39,7 +38,6 @@
                 </div><!-- /.box-footer-->
 
             </div><!-- /.box -->
-            {!! Form::close() !!}
         </div>
     </div>
 
