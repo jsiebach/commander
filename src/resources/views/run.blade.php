@@ -46,7 +46,7 @@
                             <h3 class="box-title">{{ trans('backpack::crud.edit') }}</h3>
                         @endif
                     </div>
-                    <div class="box-body row display-flex-wrap" style="display: flex;flex-wrap: wrap;">
+                    <div class="row display-flex-wrap">
                         <!-- load the view from the application if it exists, otherwise load the one in the package -->
                         @if(view()->exists('vendor.backpack.crud.form_content'))
                             @include('vendor.backpack.crud.form_content', ['fields' => $fields, 'action' => 'edit'])
