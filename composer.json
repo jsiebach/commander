@@ -1,7 +1,7 @@
 {
   "name": "jsiebach/commander",
   "description": "A Laravel Backpack-driven interface for executing artisan commands",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "keywords":["laravel", "laravel backpack", "artisan"],
   "homepage": "https://github.com/jsiebach/commander",
   "license": "MIT",
@@ -20,8 +20,8 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "backpack/base": "1.0.*|0.9.*|0.8.*|0.7.*",
-    "backpack/crud": "3.5.*|3.4.*|3.3.*|3.2.*"
+    "backpack/base": "1.0.*",
+    "backpack/crud": "3.5.*"
   },
   "extra": {
     "laravel": {
