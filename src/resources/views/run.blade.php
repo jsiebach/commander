@@ -23,7 +23,6 @@
                   action="{{ url($crud->route."/$id/run") }}"
             >
                 {!! csrf_field() !!}
-                {!! method_field('PUT') !!}
                 <div class="col-md-12">
                     <div class="row display-flex-wrap">
                         <!-- load the view from the application if it exists, otherwise load the one in the package -->

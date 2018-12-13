@@ -7,6 +7,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Carbon\Carbon;
 use Backpack\CRUD\app\Http\Requests\CrudRequest;
 use Illuminate\Support\Facades\Artisan;
+use Route;
 
 class CommanderCrudController extends CrudController
 {
@@ -53,18 +54,23 @@ class CommanderCrudController extends CrudController
 			]
 		]);
 
-		$this->crud->addFields([
-			[
-				'name' => 'command',
-				'label' => 'Command',
-				'type' => 'text'
-			],
-			[
-				'name' => 'descriptive_name',
-				'label' => 'Descriptive Name (Optional)',
-				'type' => 'text'
-			]
-		]);
+		if(!is_null( Route::current()->parameter('command'))){
+			$command = CommanderCommand::find( Route::current()->parameter('command'));
+			$this->crud->addFields($command->getCommanderFields());
+		} else {
+			$this->crud->addFields([
+				[
+					'name' => 'command',
+					'label' => 'Command',
+					'type' => 'text'
+				],
+				[
+					'name' => 'descriptive_name',
+					'label' => 'Descriptive Name (Optional)',
+					'type' => 'text'
+				]
+			]);
+		}
 		// $this->crud->removeColumn('column_name'); // remove a column from the stack
 		// $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
 		// $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
