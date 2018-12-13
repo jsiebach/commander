@@ -176,11 +176,11 @@ class CommanderCrudController extends CrudController
 		$command = CommanderCommand::findOrFail($id);
 		if($request->get('--queue_command')){
 			Artisan::queue($command->command_object->getName(),
-				$request->except('_token', '--queue_command', '--queue_name'))->onQueue($request->get('--queue_name', 'default'));
+				$request->except('http_referrer','_token', '--queue_command', '--queue_name'))->onQueue($request->get('--queue_name', 'default'));
 			$exitCode = 2;
 		} else {
 			$exitCode = Artisan::call($command->command_object->getName(),
-				$request->except('_token', '--queue_command', '--queue_name'));
+				$request->except('http_referrer','_token', '--queue_command', '--queue_name'));
 		}
 
 		$this->data['id'] = $id;
